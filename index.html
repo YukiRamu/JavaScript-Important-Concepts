@@ -129,7 +129,7 @@
             <img class="scope7" src="./img/scope7.JPG" alt="scope7">
             <p>Both codes returns to you "10"!? Why does the right one work? In local scope, isn't a variable available only inside the scope? It doesn't make sense because when it comes to the function scope, you cannot have access to the variable inside the function. <span>"var" is the exeption of the concept of Local Scope.</span></p>
             <h3>Keyword: let and Const</h3>
-            <p>The reason of this contradicting situation is because of the hoisting in JavaScript, which is applied to "var". <span>The keyword "var" is considered as a universal keyword.</span> This causes the mess in your code and might create confusion. The rule should be if you create a block level statement, you shouldn't be able to access from outside. How can we fix this? Actually this Block Scope was introduced in ES6 with the let and const keyword which can fix this contradicting flow. let's change the keyword "var" to "let" and see what will happen.</p>
+            <p>The reason of this contradicting situation is because of the hoisting in JavaScript, which is applied to "var" when you use it in a block scope. <span>The keyword "var" is considered as a universal keyword.</span> This causes the mess in your code and might create confusion. The rule should be if you create a block level statement, you shouldn't be able to access from outside. How can we fix this? Actually this Block Scope was introduced in ES6 with the let and const keyword which can fix this contradicting flow. let's change the keyword "var" to "let" and see what will happen.</p>
             <img class="scope8" src="./img/scope8.JPG" alt="scope8">
             <p>Great!! It works as expected. When you write the console.log statement inside if statement, you will get "10" as a value of "count". While, if you move the console.log statement outside of the if statement, you will get an reference error.</p>
             <h3>Tips for ES6</h3>
@@ -143,7 +143,7 @@
             <img class="h50" src="./img/scope9.JPG" alt="scope9">
             <p>However, let's take a look at another example below. The outer function named "outerFunction()" does not have access to the inner function’s variable, "const inner". Then it will throw you an reference error.</p>
             <img class="h50" src="./img/scope10.JPG" alt="scope10">
-            <p>Lastly, here is the code for a block statement. The code given below will return you "result is 12" in your console because "let x" and "let y" which are declared in the outer area (parent scooe) and are accessible from the inner area (child scope).</p>
+            <p>Lastly, here is the code for a block statement. The code given below will return you "result is 12" in your console because "let x" and "let y" which are declared in the outer area (parent scope) and are accessible from the inner area (child scope).</p>
             <img class="h55" src="./img/scope11.JPG" alt="scope11">
             <p>On the contrary, if you try to console log "sum" in the outer area which is declared in the inner area, it will throw you an reference error. Just to recap, if you change the keyword "let" to "var" in the block statement (<span>NOT IN THE FUNCTION</span>), you have access to "sum" in the inner area thanks to the help of hoisting concept applied to "var" keyword.<br><span>*Note:</span> the value of "var sum" can be either "undefined" or "12" depending on where you write the console.log statement.</p>
             <img class="h55" src="./img/scope12.JPG" alt="scope12">
@@ -164,7 +164,8 @@
           </div>
 
           <div class="example"> 
-            <p>The scope can isolate the variables, which means you can use the variables with the same names in multiple scopes. Here we cover three types of variables: var, let, and const.</p>
+            <p>The scope can isolate the variables, which means you can use the variables with the same names in multiple scopes. The example below is perfectly fine.Here we cover three types of variables: var, let, and const.</p>
+            <img class="h50" src="./img/var.JPG" alt="var">
 
             <h3>Variables and Block</h3>
             <p>In JavaScript, there are three types of keywords to declare a variable. The difference between those three are based on the scope, hoisting and reassignment of values.</p>
@@ -192,20 +193,20 @@
               </tr>
               <tr>
                 <td class="keyword">const</td>
-                <td>Function Scope</td>
+                <td>Block Scope</td>
                 <td>No</td>
                 <td>No</td>
                 <td>No</td>
               </tr>
             </table>
             <h3>Reassign</h3>
-            <p>"Reassign" means adding the value in your code based on your logic. Let's take a look at the example below. If you use "let" keyword, even after you add the value "London", it can be changeable. However in case of "const", it cannot be changed later on. If you try to change it, it will throw you a Type error. </p>
+            <p>"Reassign" means adding the value in your code again based on your logic. Let's take a look at the example below. If you use "let" keyword, even after you add the value "London", it can be changeable. However in case of "const", it cannot be changed later on. If you try to change it, it will throw you a Type error. </p>
             <img src="./img/reassign.JPG" alt="reassign">
             <h3>Redaclare</h3>
             <p>With "let" and "const", it is not allowed to declare the same variables in the same scope. It will throw you a syntax error shown below. With "var", you can re-declare the same variable.</p>
             <img src="./img/redaclare.JPG" alt="redclare">
 
-            <p>You may be wondering which of the three you should use in your code. A commonly accepted practice is <span>to use "const" as much as possible, and let in the case of loops and reassignment</span> . In general, it is better to avoid using "var" becuase it might cause an unexpected reassignment in your code.</p>
+            <p>You may be wondering which of the three you should use in your code. As a common practice, it is better <span>to use "const" as much as possible, and let in the case of loops and reassignment</span> . In general, it is better to avoid using "var" becuase it might cause an unexpected reassignment in your code.</p>
             <div class="line"><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></div>   
             <p>To be updated....</p>  
           </div>          

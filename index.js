@@ -28,6 +28,23 @@ $(document).ready(function() {
 // }
 // outerFunction()();
   
+function getCity() {
+  let city = "Vancouver";
+  console.log(city);
+}
+
+function getAddress() {
+  let city = "Tokyo";
+  console.log(city);
+}
+
+if (true) {
+  let a = 4;
+  let result = 5 + a;
+} else {
+  let b = 5;
+  let result = 5 + b;
+}
 
 
 
