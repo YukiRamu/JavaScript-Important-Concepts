@@ -1,0 +1,190 @@
+/* Yuki Matsubara - Morning Class WMAD2 Week1 Weekly Assignment */
+// html {
+//   scroll-behavior: smooth;
+// }
+.container {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  //******** title
+  .title {
+    position: relative;
+    .topImg {
+      width: 100%;
+      height: 50vh;
+    }
+    h1 {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color:white;
+      text-align: center;
+      font-size: 4em;
+      font-family: 'Playfair Display', serif;
+      span {
+        color: gold;
+      }
+    }
+  }
+  //******** article
+  .article {
+    width: 80%;
+    margin: auto;
+    .intro {
+      font-size: 1.7em;
+      text-align: justify;
+      padding-top: 1em;
+      p {
+        margin-bottom: 1.5em;
+        &::first-letter {
+          font-size: 2em;
+          color: gold;
+          font-weight: bold;
+        }
+      }
+    }
+    nav {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 1em;
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          list-style: none;
+          padding:0.3em 1em;
+        }
+      }
+      a {
+        // margin: 1em 2em;
+        padding:0.3em 1em;
+        background-color: slategray;
+        color: white;
+        text-decoration: none;
+        &:hover {
+          color: violet;
+          font-style: oblique;
+          font-weight: bold;
+          background-color: white;
+          border: 0.1em solid slategray;
+        }
+      }
+    }
+    //******** section title
+    .articleSection {
+      .secTitle {
+        h2 {
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 2.5em;
+          font-family: 'Playfair Display', serif;
+          margin-bottom: 1em;
+          span {
+            padding-left: 1em;
+            padding-right:1em;
+          }
+        }
+        p {
+          border-left: 0.2em solid violet;
+          padding: 0 1.5em;
+          font-size: 2em;
+          text-align: justify;
+          font-family: 'Crimson Text', serif;
+        }
+      }
+      .example {
+        font-size: 1.5em;
+        a {
+          text-decoration: none;
+          color: black;
+          border-bottom: 0.1em solid violet;
+          &:hover {
+            color: violet;
+          }
+        }
+        h3 {
+          i {
+            padding-left: 0.5em;
+            color:gold;
+          }
+        }
+        p {
+          span {
+            background-color: rgb(226, 228, 231);
+            color:firebrick;
+            font-weight: bold;
+          }
+        }
+        .fa-lightbulb {
+          padding-left: 0;
+        }
+        .fa-arrow-right {
+          padding: 0 1em;
+        }
+        .line {
+          text-align: center;
+          margin: 1em;
+          .fa-circle {
+            font-size: 0.7em;
+            padding: 0 5em;
+            color: slategray;
+          }
+        }      
+        img {
+          box-shadow: 0.3em 0.3em 0.5em rgb(32, 32, 32);
+          margin-bottom: 1.5em;
+          height: 35vh;
+        }
+        .h40 {
+          height: 40vh;
+        }
+        .h50 {
+          height:50vh;
+        }
+        .sum {
+          width: 100%;
+          height:85vh;
+          display: block;
+          margin: auto;
+          margin-bottom: 1em;
+        }
+        table {
+          width: 60%;
+          margin: auto;
+          margin-bottom: 1em;
+          border: 0.1em solid slategray;
+          text-align: center;
+          border-radius: 20%;
+          tr {           
+            th {
+              border: 0.1em solid slategray;
+              border-bottom: 0.2em double gray;
+              padding:0.3em;
+              background-color:rgba(182, 175, 182, 0.738);
+            }
+            td {
+              border: 0.1em dotted slategray;
+            }
+            .keyword {
+              font-weight: bold;
+              background-color: rgb(245, 220, 245)
+            }
+          }
+        };
+      }
+    }
+  }
+  //******** move to top
+  .toTop {
+   display: none;
+    z-index: 1;
+    color: violet;
+    position: fixed;
+    bottom: 1em;
+    right:1.5em;
+    cursor: pointer;
+    &:hover {
+      color: slategray;
+    }
+  }
+}

@@ -1,0 +1,225 @@
+<!--Yuki Matsubara - Morning Class WMAD2 Week1 Weekly Assignment-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Important Concepts</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&family=Crimson+Text:ital,wght@1,600&display=swap&family=Playfair+Display:wght@600&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a62f436beb.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <img class="topImg" src="./img/top.jpeg" alt="top">
+        <h1>Important <span>JavaScript </span>Concepts<br>for all Developers</h1>
+      </div>
+      <article class="article">
+        <section class="intro">
+          <p>Javascript as one of the most popular programming language in the world, is used to create dynamic websites. You can apply fancy animations to your websites, move the contents of it, create photo slideshows, or even connect to the server and control the data. In this article, I will share some essential JavaScript concepts that are commonly used by all developers and you cannot miss!☺</p>
+        </section>
+        <nav>
+          <ul>
+            <li><a href="#hoisting">Hoisting</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#variable">Variable Isolation</a></li>
+            <li><a href="#closure">Closure and IIFE</a></li>
+            <li><a href="#">Callbacks</a></li>         
+          </ul>
+          <ul>
+            <li><a href="#">"this." keyword</a></li>
+            <li><a href="#">Prototype and Inheritance</a></li>
+            <li><a href="#">Async & Await</a></li>   
+          </ul>
+        </nav>
+        <!--Hoisting-->
+        <section class="articleSection" id="hoisting">
+          <div class="secTitle">
+            <h2>01<br><span>-</span>Hoisting<span>-</span></h2>
+            <p>Hoisting is a JavaScript Mechanism where variable declaration and function declaration move to the top of their scope before execution.</p>
+          </div>
+
+          <div class="example"> 
+            <!--Variable Declaration-->
+            <p>In this section, both <a href="#varDec">variable declaration</a> and <a href="#funDec">function declaration</a> will be covered.</p>
+            <h3 id="varDec">#1 Variable Declaration :</h3>
+            <h3>Example : OK<i class="fas fa-thumbs-up fa-2x"></i></h3>
+            <p>The code given below will give you "Chocolate" in your console.</p>
+            <img src="./img/hoisting_ok.JPG" alt="hoistingOk">
+
+            <h3>Example : NG<i class="fas fa-thumbs-down fa-2x"></i></h3>
+            <p>In the example below, you get an erorr in your console because the program doesn't know the value of "sweets".</p>
+            <img src="./img/hoisting_ng.JPG" alt="hoistingNG">
+
+            <h3>Why does this happen?</h3>
+            <p>What's happening behind the scene is that before JavaScript actually runs, the compiler takes all the variable declarations and function declarations and moves them all the way to the top. Then it starts reading the scripts.</p>
+            <p>The compiler takes "let sweets", move it to the top. When you console it to the log, you will get "undefined" because it doesn't have a value at the moment. When you declare a variable, the default value is "undefined". After the value is added, "Chocolate" will be shown on your console.</p>
+            <img src="./img/hoisting_bh1.JPG" alt="hoistingBh">
+            <i class="fas fa-arrow-right fa-2x"></i>
+            <img src="./img/hoisting_ok2.JPG" alt="HoistingOK2">
+
+            <!--Function Declaration-->
+            <h3 id="funDec">#2 Function Declaration :</h3>
+            <p>The same thing happens with the function declaration. Let's take a look at two codes below.</p>
+            <h3>Example : OK - Pattern 1<i class="fas fa-thumbs-up fa-2x"></i></h3>
+            <p>With the code given below, naturally you will get "Hello everyone!" in your console.</p>
+            <img src="./img/hoisting_ok3.JPG" alt="hoistingOk3">
+
+            <h3>Example : OK - Pattern 2<i class="fas fa-thumbs-up fa-2x"></i></h3>
+            <p>Now, take a look at another example below. Even if you call the function before declaration, you still get "Hello everyone!" in your console, as the compiler takes the function declaration to the top. Awesome!</p>
+            <img src="./img/hoisting_ok4.JPG" alt="hoistingOK4">
+            
+            <h3>How about this? Does it work?</h3>
+            <img src="./img/hoisting_ng2.JPG" alt="hoistingNG2">
+            <p>The answer is <span>"NO"</span>. Why? What is happening is that the compiler takes only "var weather" to the top before execution. </p>
+            <img class="h40" src="./img/hoisting_bh2.JPG" alt="hoistingBh2">
+            <p>As you can see now, "weather" is a variable, NOT a function. Hence the error message.</p>            
+          </div>
+        </section>
+
+        <!--Scope-->
+        <section class="articleSection" id="scope">
+          <div class="secTitle">
+            <h2>02<br><span>-</span>Scope<span>-</span></h2>
+            <p>Scope defines the accessibility of variables, functions and objects in your code when it is running. </p>
+          </div>
+
+          <div class="example"> 
+            <p>There are only two types of scopes in JavaScript. One is <a href="#global">Global Scope </a> and the other is <a href="#local">Local Scope</a> . It is important to have clear understanding of which variables you have access to because it helps you to separate logic in your code.</p>
+
+            <!--Global Scope-->
+            <h3 id="global">#1 Global Scope :</h3>
+            <p>It is declared in the root of your file/document and you have access to this anywhere in your code.</p>
+            <img src="./img/scope1.JPG" alt="scope1">
+            <p>The example above will give you "Hello, I am from Japan", which has "Japan" as a variable included. Great! What happens here is that the function, "getCountry()" actually checks to see if ${country} is available inside the function block. And it is not in this case. What it does next is that it looks one layer above and go find the variable "country". Now it is available with the value, "Japan". That is how the function looks up the variable.</p>
+
+            <h3>What if multiple functions are nested?</h3>
+            <p>Let's take a look at the example below. The function "getCity()" is inside the function "getCountry()". How does the function "getCity()" check the variable?</p>
+            <img class="h50" src="./img/scope2.JPG" alt="scope2">
+            <p>First, it checks if ${city} is declared inside the function itself. It is not declared in this case. Now then it moves one lebel up to find ${city}. Again it is not yet declared. Finally it goes outside the function "getCountry(). Now it is able to find the value, "Tokyo". Good.</p>
+
+            <h3>One more interesting thing</h3>
+            <p>When you declare another variable, "var city = "London"; inside the function getCity(), which value does the function take, Tokyo or London?</p>
+            <img class="h50" src="./img/scope3.JPG" alt="scope3">
+            <p>The answer is <span>"London"!</span>  What it does behind the scene is that it checks to see if the variable is available inside and it is in this case, therefore, it will not go up anymore.</p>
+
+            <!--Local Scope-->
+            <h3 id="local">#2 Local Scope</h3>
+            <p>Local Scope is declared either inside functions or curly braces {}. The fundamental concept is that variables inside the local scopes are accessible only within the scope. However there are always exeptions with special cases applied. We will cover that part later on. For now, in the example below, from each Local Scope, you cannot access to other Local Scopes. And from "Global Scope", all three Local Scopes are NOT accessible. That said, the example below will throw you an error, "fullName is not defined".</p>
+            <img class="h50" src="./img/localScope.JPG" alt="localScope">
+            <p>There are two kinds of local scopes: <a href="#funSC">Function scope</a>  and <a href="#blockSC">Block scope</a>. Also <a href="#lexical">Lexical Scoping</a> will be covered as an additional topic.</p>
+
+            <!--Function Scope-->
+            <h3 id="funSC">・2-1 Function Scope :</h3>
+            <p>JavaScript uses Function Scope, meaning the scope is established by functions. Function scope is declared inside the function and available only inside the function. This means that variables having the same name can be used in several differnt functions. This is because each function has its own scope and they are not accessible in other functions. When you run the code below, you will get "Let's drink wine and have some cheese" as natural.</p>
+            <img class="h50" src="./img/scope4.JPG" alt="scope4">
+
+            <p>One thing you also need to remember is that all your variables functionally scoped that are inside the function cannot be used outside. Let's take a look at the example below. If you try to console log "${drink}" outside the function getDrink(), It will not work and throw you an error.</p>
+            <img class="h50" src="./img/scope5.JPG" alt="scope5">
+            <p>However, if you move "const drink = "wine" to the outside of the function, it will work just fine. Because the function itself keeps searching the variable until it finds one."</p>
+            <img class="h50" src="./img/scope6.JPG" alt="scope6">
+
+            <!--Block Scope + ES6 version -->
+            <h3 id="blockSC">・2-2 Block Scope :</h3>
+            <p>Block Scope is the area within any of conditional statements and loop statements such as if, else, switch, for, and while. In general, everything sparated with curly braces {} is considered as a block. Let's see two examples below:</p>
+            <img class="scope7" src="./img/scope7.JPG" alt="scope7">
+            <p>Both codes returns to you "10"!? Why does the right one work? In local scope, isn't a variable available only inside the scope? It doesn't make sense because when it comes to the function scope, you cannot have access to the variable inside the function. <span>"var" is the exeption of the concept of Local Scope.</span></p>
+            <h3>Keyword: let and Const</h3>
+            <p>The reason of this contradicting situation is because of the hoisting in JavaScript, which is applied to "var". <span>The keyword "var" is considered as a universal keyword.</span> This causes the mess in your code and might create confusion. The rule should be if you create a block level statement, you shouldn't be able to access from outside. How can we fix this? Actually this Block Scope was introduced in ES6 with the let and const keyword which can fix this contradicting flow. let's change the keyword "var" to "let" and see what will happen.</p>
+            <img class="scope8" src="./img/scope8.JPG" alt="scope8">
+            <p>Great!! It works as expected. When you write the console.log statement inside if statement, you will get "10" as a value of "count". While, if you move the console.log statement outside of the if statement, you will get an reference error.</p>
+            <h3>Tips for ES6</h3>
+            <p>Since a universal "var" can confuse the JavaScript scope concept, <span> it is recommended to use "let" or "const" instead of "var" inside function or block statements.</span> The difference between "let" and "const" will be covered in <a href="#variable"> 03. Variavle Isolation section.</a></p>
+            <div class="line"><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></div>
+
+            <!--Lexical Scoping-->
+            <h3 id="lexical">Additional Topic - Lexical Scoping :</h3>
+            <p>In JavaScript, when you write some nested statements or functions, the child scope have access to the variables defined in the parent scope, but <span> NOT vice-versa.</span> Lexical scoping is often discussed with Function scope, but the concept of parent-child relationship can also be applied to Block statements.</p>
+            <p>In the code given below, the function named "innerFunction()" can access to the variable "outer" which is declared in the lexical scope of innerFunction();. As such, you will see "Here is the lexical scope" in your console.</p>
+            <img class="h50" src="./img/scope9.JPG" alt="scope9">
+            <p>However, let's take a look at another example below. The outer function named "outerFunction()" does not have access to the inner function’s variable, "const inner". Then it will throw you an reference error.</p>
+            <img class="h50" src="./img/scope10.JPG" alt="scope10">
+            <p>Lastly, here is the code for a block statement. The code given below will return you "result is 12" in your console because "let x" and "let y" which are declared in the outer area (parent scooe) and are accessible from the inner area (child scope).</p>
+            <img class="h50" src="./img/scope11.JPG" alt="scope11">
+            <p>On the contrary, if you try to console log "sum" in the outer area which is declared in the inner area, it will throw you an reference error. Just to recap, if you change the keyword "let" to "var" in the block statement (<span>NOT IN THE FUNCTION</span>), you have access to "sum" in the inner area thanks to the help of hoisting concept applied to "var" keyword.<br><span>*Note:</span> the value of "var sum" can be either "undefined" or "12" depending on where you write the console.log statement.</p>
+            <img class="h50" src="./img/scope12.JPG" alt="scope12">
+
+            <div class="line"><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></div>
+
+            <h3>Let's summarize the Scope</h3>
+            <p>Since the scope concept can easily get people confused, here is the summary of what is covered in this article.</p>
+            <img class="sum" src="./img/scopeSummary.JPG" alt="scopeSum">
+          </div>
+        </section>
+
+        <!--Variables-->
+        <section class="articleSection" id="variable">
+          <div class="secTitle">
+            <h2>03<br><span>-</span>Variable Isolation<span>-</span></h2>
+            <p>A variable is a type of container that is used in Javascipt in order to store data inside of.</p>
+          </div>
+
+          <div class="example"> 
+            <p>The scope can isolate the variables, which means you can use the variables with the same names in multiple scopes. Here we cover three types of variables: var, let, and const.</p>
+
+            <h3>Variables and Block</h3>
+            <p>In JavaScript, there are three types of keywords to declare a variable. The difference between those three are based on the scope, hoisting and reassignment of values.</p>
+            <table>
+              <tr>
+                <th>Keyword</th>
+                <th>Scope</th>
+                <th>Hoisting</th>
+                <th>Reassign</th>
+                <th>Redeclare</th>
+              </tr>
+              <tr>
+                <td class="keyword">var</td>
+                <td>Function Scope</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td class="keyword">let</td>
+                <td>Block Scope</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td class="keyword">const</td>
+                <td>Function Scope</td>
+                <td>No</td>
+                <td>No</td>
+                <td>No</td>
+              </tr>
+            </table>
+            <h3>Reassign</h3>
+            <p>"Reassign" means adding the value in your code based on your logic. Let's take a look at the example below. If you use "let" keyword, even after you add the value "London", it can be changeable. However in case of "const", it cannot be changed later on. If you try to change it, it will throw you a Type error. </p>
+            <img src="./img/reassign.JPG" alt="reassign">
+            <h3>Redaclare</h3>
+            <p>With "let" and "const", it is not allowed to declare the same variables in the same scope. It will throw you a syntax error shown below. With "var", you can re-declare the same variable.</p>
+            <img src="./img/redaclare.JPG" alt="redclare">
+
+            <p>You may be wondering which of the three you should use in your code. A commonly accepted practice is <span>to use "const" as much as possible, and let in the case of loops and reassignment</span> . In general, it is better to avoid using "var" becuase it might cause an unexpected reassignment in your code.</p>
+            <div class="line"><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></div>   
+            <p>To be updated....</p>  
+          </div>          
+        </section>
+
+        
+
+
+        
+
+
+      </article>
+      <a id="toTop" class="toTop" href="#"><i class="fas fa-arrow-alt-circle-up fa-3x"></i></a>    
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
