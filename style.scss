@@ -19,7 +19,7 @@
       transform: translate(-50%, -50%);
       color:white;
       text-align: center;
-      font-size: 4em;
+      font-size: 5em;
       font-family: 'Playfair Display', serif;
       span {
         color: gold;
@@ -133,13 +133,16 @@
         img {
           box-shadow: 0.3em 0.3em 0.5em rgb(32, 32, 32);
           margin-bottom: 1.5em;
-          height: 35vh;
+          height: 30vh;
         }
         .h40 {
           height: 40vh;
         }
         .h50 {
           height:50vh;
+        }
+        .h55 {
+          height:55vh;
         }
         .sum {
           width: 100%;

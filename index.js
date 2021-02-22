@@ -28,6 +28,22 @@ $(document).ready(function() {
 // }
 // outerFunction()();
 
+
+//Local Scope
+if (true) {
+  //Local scope 1
+
+}else {
+  //Local scope 2
+
+}
+function getName() {
+  //Local scope 3
+  var fullName = "Edward";
+}
+//Global Scope
+console.log(fullName);
+getName();
   
 
 

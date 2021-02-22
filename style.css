@@ -21,7 +21,7 @@
           transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  font-size: 4em;
+  font-size: 5em;
   font-family: 'Playfair Display', serif;
 }
 
@@ -154,7 +154,7 @@
   -webkit-box-shadow: 0.3em 0.3em 0.5em #202020;
           box-shadow: 0.3em 0.3em 0.5em #202020;
   margin-bottom: 1.5em;
-  height: 35vh;
+  height: 30vh;
 }
 
 .container .article .articleSection .example .h40 {
@@ -163,6 +163,10 @@
 
 .container .article .articleSection .example .h50 {
   height: 50vh;
+}
+
+.container .article .articleSection .example .h55 {
+  height: 55vh;
 }
 
 .container .article .articleSection .example .sum {

@@ -94,17 +94,17 @@
             <!--Global Scope-->
             <h3 id="global">#1 Global Scope :</h3>
             <p>It is declared in the root of your file/document and you have access to this anywhere in your code.</p>
-            <img src="./img/scope1.JPG" alt="scope1">
+            <img class="h40" src="./img/scope1.JPG" alt="scope1">
             <p>The example above will give you "Hello, I am from Japan", which has "Japan" as a variable included. Great! What happens here is that the function, "getCountry()" actually checks to see if ${country} is available inside the function block. And it is not in this case. What it does next is that it looks one layer above and go find the variable "country". Now it is available with the value, "Japan". That is how the function looks up the variable.</p>
 
             <h3>What if multiple functions are nested?</h3>
             <p>Let's take a look at the example below. The function "getCity()" is inside the function "getCountry()". How does the function "getCity()" check the variable?</p>
-            <img class="h50" src="./img/scope2.JPG" alt="scope2">
+            <img class="h55" src="./img/scope2.JPG" alt="scope2">
             <p>First, it checks if ${city} is declared inside the function itself. It is not declared in this case. Now then it moves one lebel up to find ${city}. Again it is not yet declared. Finally it goes outside the function "getCountry(). Now it is able to find the value, "Tokyo". Good.</p>
 
             <h3>One more interesting thing</h3>
             <p>When you declare another variable, "var city = "London"; inside the function getCity(), which value does the function take, Tokyo or London?</p>
-            <img class="h50" src="./img/scope3.JPG" alt="scope3">
+            <img class="h55" src="./img/scope3.JPG" alt="scope3">
             <p>The answer is <span>"London"!</span>  What it does behind the scene is that it checks to see if the variable is available inside and it is in this case, therefore, it will not go up anymore.</p>
 
             <!--Local Scope-->
@@ -144,9 +144,9 @@
             <p>However, let's take a look at another example below. The outer function named "outerFunction()" does not have access to the inner function’s variable, "const inner". Then it will throw you an reference error.</p>
             <img class="h50" src="./img/scope10.JPG" alt="scope10">
             <p>Lastly, here is the code for a block statement. The code given below will return you "result is 12" in your console because "let x" and "let y" which are declared in the outer area (parent scooe) and are accessible from the inner area (child scope).</p>
-            <img class="h50" src="./img/scope11.JPG" alt="scope11">
+            <img class="h55" src="./img/scope11.JPG" alt="scope11">
             <p>On the contrary, if you try to console log "sum" in the outer area which is declared in the inner area, it will throw you an reference error. Just to recap, if you change the keyword "let" to "var" in the block statement (<span>NOT IN THE FUNCTION</span>), you have access to "sum" in the inner area thanks to the help of hoisting concept applied to "var" keyword.<br><span>*Note:</span> the value of "var sum" can be either "undefined" or "12" depending on where you write the console.log statement.</p>
-            <img class="h50" src="./img/scope12.JPG" alt="scope12">
+            <img class="h55" src="./img/scope12.JPG" alt="scope12">
 
             <div class="line"><i class="fas fa-circle"></i><i class="fas fa-circle"></i><i class="fas fa-circle"></i></div>
 
