@@ -183,11 +183,16 @@
     z-index: 1;
     color: violet;
     position: fixed;
-    bottom: 1em;
-    right:1.5em;
+    bottom: 1.5em;
+    right:2em;
     cursor: pointer;
     &:hover {
       color: slategray;
     }
+  }
+  footer {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.3em;
   }
 }
