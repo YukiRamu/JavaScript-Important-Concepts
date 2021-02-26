@@ -16,38 +16,45 @@ $(document).ready(function() {
   });
 });
 
-/*Examples shown in the articles */
-// //closure
-// function outerFunction () {
-//   const outer = `I see the outer variable!`
+//closure
+// function getCountry () {
+//   let city = "Tokyo";
 
-//   function innerFunction() {
-//     console.log("I am here " + outer);
+//   function getCity () {
+//     console.log(city); 
 //   }
-//   return innerFunction;
+//   getCity();
 // }
-// outerFunction()();
-  
-function getCity() {
-  let city = "Vancouver";
-  console.log(city);
-}
+// getCountry();
+//console
 
-function getAddress() {
+//closure
+function getCountry() {
   let city = "Tokyo";
-  console.log(city);
+
+  function getCity() {
+    return city;
+  }
+  return getCity;
 }
-
-if (true) {
-  let a = 4;
-  let result = 5 + a;
-} else {
-  let b = 5;
-  let result = 5 + b;
-}
+let myCity = getCountry()();
+console.log("I worked in " + myCity + " for 4 years");
+//console
 
 
 
+// //closure
+// function OuterFunction () {
+//   let city = "Tokyo";
 
+//   function getCity () {
+//     console.log (city);
+//   }
+//   return getCity;
+// }
+// const myCity = OuterFunction();
+// myCity();
+// console.log(myCity);
+// //console
 
 
